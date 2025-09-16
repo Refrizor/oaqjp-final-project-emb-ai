@@ -1,5 +1,4 @@
 import json
-
 import requests
 
 URL = "https://sn-watson-emotion.labs.skills.network/v1/watson.runtime.nlp.v1/NlpService/EmotionPredict"
@@ -31,6 +30,3 @@ def emotion_detector(text, verbose=False):
     response = create_request(text)
     if verbose: print(json.dumps(response, indent=2))
     return response
-
-
-emotion_detector("Hello World!")
