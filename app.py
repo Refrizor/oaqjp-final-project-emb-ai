@@ -4,4 +4,6 @@ from flask import Flask
 # Basic Flask instantiation
 app = Flask(__name__)
 
-emotion_detector("I love this new technology.", True)
+emotion = emotion_detector("I love this new technology.", True)
+
+print(emotion)
