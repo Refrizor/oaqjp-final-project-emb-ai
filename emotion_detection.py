@@ -4,15 +4,15 @@ import requests
 URL = "https://sn-watson-emotion.labs.skills.network/v1/watson.runtime.nlp.v1/NlpService/EmotionPredict"
 HEADERS = {"grpc-metadata-mm-model-id": "emotion_aggregated-workflow_lang_en_stock"}
 
-def create_request(text_to_analyse):
+def create_request(text_to_analyze):
     """Sends a POST request to Watson's LLM library
 
-    :param text_to_analyse: Input text to be analyzed.
+    :param text_to_analyze: Input text to be analyzed.
     :return: dict if success, None otherwise
     """
 
-    text_to_analyse = text_to_analyse.lower()
-    request = requests.post(URL, json={"raw_document": {"text": text_to_analyse}}, headers=HEADERS)
+    text_to_analyze = text_to_analyze.lower()
+    request = requests.post(URL, json={"raw_document": {"text": text_to_analyze}}, headers=HEADERS)
 
     try:
         response = request.json().get("emotionPredictions")
