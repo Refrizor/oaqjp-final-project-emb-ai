@@ -23,8 +23,9 @@ def create_request(text_to_analyze):
 def emotion_detector(text, verbose=False):
     """Detects emotions using Watson's LLM library
 
-    :param verbose: Printing output
-    :param text: Input text to be passed to request and analyzed
+    :param text:
+    :param verbose:
+    :return: emotion results from create_request
     """
 
     response = create_request(text)
