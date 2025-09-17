@@ -16,13 +16,12 @@ def create_request(text_to_analyze: str) -> list | None:
 
     try:
         response = request.json().get("emotionPredictions")
-        print(type(response))
         return response
     except Exception as e:
         print("Error parsing the response:", request.raise_for_status(), e)
 
 def emotion_detector(text: str, verbose: bool = False) -> dict | None:
-    """Detects emotions using Watson's LLM library
+    """Detects emotions using Watson's LLM library thingy
 
     :param text: Input text to be used in the request
     :param verbose: Output request for testing
@@ -35,11 +34,11 @@ def emotion_detector(text: str, verbose: bool = False) -> dict | None:
     dominant_emotion = get_dominant_emotion(emotion_dict)
     emotion_dict["dominant_emotion"] = dominant_emotion
 
-    if verbose: print(json.dumps(emotion_dict, indent=2))
+    if verbose: print("Beautified output:", json.dumps(emotion_dict, indent=2))
     return emotion_dict
 
 def get_dominant_emotion(emotions: dict[str, float]) -> str:
-    """Find the emotion with the highest score
+    """Find the emotion with the highest score :D
 
     :param emotions: Dictionary mapping emotion names to scores
     :return: The name of the emotion (str)
