@@ -19,5 +19,5 @@ class Test(TestCase):
         self.assertEqual(res["dominant_emotion"], "sadness")
 
     def test_fear(self):
-        res = emotion_detector("I am really afraid that this will happen	", True)
+        res = emotion_detector("I am really afraid that this will happen", True)
         self.assertEqual(res["dominant_emotion"], "fear")
