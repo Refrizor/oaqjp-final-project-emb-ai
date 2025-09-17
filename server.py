@@ -11,7 +11,10 @@ def index():
 @app.route("/emotionDetector", methods=['GET'])
 def get_emotion_detector():
     text = request.args.get('textToAnalyze')
-    return emotion_detector(text, True)
+    emotion_data = emotion_detector(text, True)
+    dominant_emotion = emotion_data['dominant_emotion']
+    output = f"For the given statement, the system response is {emotion_data}. The dominant emotion is: <b>{dominant_emotion}</b>"
+    return output
 
 if __name__ == "__main__":
     app.run(debug=True)
