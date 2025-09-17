@@ -1,15 +1,21 @@
-from EmotionDetection import emotion_detector
+"""Flask web server for emotion detection (NLP EmotionPredict)"""
+
 from flask import Flask, render_template, request
+from EmotionDetection import emotion_detector
 
 # Basic Flask instantiation
 app = Flask(__name__)
 
 @app.route('/')
 def index():
+    """Render the index.html template."""
+
     return render_template("index.html")
 
 @app.route("/emotionDetector", methods=['GET'])
 def get_emotion_detector():
+    """Analyze text input and return emotion detection results."""
+
     text = request.args.get('textToAnalyze')
     emotion_data = emotion_detector(text, True)
 
