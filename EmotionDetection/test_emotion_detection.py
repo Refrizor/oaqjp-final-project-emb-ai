@@ -1,0 +1,23 @@
+from unittest import TestCase
+from . import emotion_detector
+
+class Test(TestCase):
+    def test_joy(self):
+        res = emotion_detector("I am glad this happened", True)
+        self.assertEqual(res["dominant_emotion"], "joy")
+
+    def test_anger(self):
+        res = emotion_detector("I am glad this happened", True)
+        self.assertEqual(res["dominant_emotion"], "anger")
+
+    def test_disgust(self):
+        res = emotion_detector("I am glad this happened", True)
+        self.assertEqual(res["dominant_emotion"], "disgust")
+
+    def test_sadness(self):
+        res = emotion_detector("I am glad this happened", True)
+        self.assertEqual(res["dominant_emotion"], "sadness")
+
+    def test_fear(self):
+        res = emotion_detector("I am glad this happened", True)
+        self.assertEqual(res["dominant_emotion"], "fear")
