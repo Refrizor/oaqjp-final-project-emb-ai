@@ -5,7 +5,6 @@ URL = "https://sn-watson-emotion.labs.skills.network/v1/watson.runtime.nlp.v1/Nl
 HEADERS = {"grpc-metadata-mm-model-id": "emotion_aggregated-workflow_lang_en_stock"}
 ERROR_DICT = {'anger': None, 'disgust': None, 'fear': None, 'joy': None, 'sadness': None, 'dominant_emotion': None}
 
-
 def create_request(text_to_analyze: str) -> list | dict[str, None]:
     """Sends a POST request to Watson's LLM library
 
